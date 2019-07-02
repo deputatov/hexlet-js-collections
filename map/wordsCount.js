@@ -6,3 +6,13 @@ const wordsCount = (words, stopWords) => {
     return countedWords
 }
 export default wordsCount
+
+// teacher solution
+// fluent interface
+export default (words, stopWords) => words
+  .map(word => word.toLowerCase())
+  .filter(word => !stopWords.includes(word))
+  .reduce((acc, word) => {
+    const count = acc.get(word) || 0;
+    return acc.set(word, count + 1);
+  }, new Map());

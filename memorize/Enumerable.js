@@ -45,7 +45,7 @@ class Enumerable {
     }
 
     get length() {
-        return toArray().length()
+        return this.toArray().length()
     }
     // END
 }
